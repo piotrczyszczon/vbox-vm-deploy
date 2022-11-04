@@ -19,4 +19,5 @@ Ansible binaries are required to run deployment scripts. To setup Ansible enviro
 
 It's enough to install cygwin, see follwing manual: https://www.cygwin.com/install.html
 
-and select ansible binaries during installation
+and select ansible binaries during installation, as shown below:
+![image](https://user-images.githubusercontent.com/62462151/200087868-61c9829d-f0ba-4915-9be2-a46b63a14de0.png)
