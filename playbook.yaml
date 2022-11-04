@@ -1,0 +1,7 @@
+---
+- hosts: virtualmachines
+  roles:
+    - os-packages
+    - docker
+    - mysql
+    - phpmyadmin

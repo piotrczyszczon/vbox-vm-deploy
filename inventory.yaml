@@ -1,0 +1,7 @@
+virtualmachines:
+  hosts:
+    vm01:
+      ansible_host: 127.0.0.2
+  vars:
+    ansible_user: test
+    ansible_password: test123

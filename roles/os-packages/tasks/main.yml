@@ -1,0 +1,14 @@
+- name: Install OS Packages
+  block:
+  - name: Install dependencies
+    apt:
+      name: "{{item}}"
+      state: present
+      update_cache: yes
+    loop:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+  become: yes

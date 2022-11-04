@@ -1,0 +1,22 @@
+- name: Setup Mysql
+  block:
+    - name: pull a phpmyadmin docker image
+      docker_image:
+        name: phpmyadmin/phpmyadmin
+        source: pull
+           
+    - name: Create PHPMyAdmin container
+      docker_container:
+        name: my-own-phpmyadmin
+        detach: true
+        image: "phpmyadmin/phpmyadmin"
+        state: started
+        restart: yes
+        links:
+          - "mysql"
+        ports:
+          - "8081:80"
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          
+  become: yes
