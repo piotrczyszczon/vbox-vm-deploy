@@ -1,0 +1,3 @@
+shared_folder:
+  src_name: "{{ shared_folder_name }}"
+  guest_path: "{{ shared_folder_guest_path }}"

@@ -1,0 +1,5 @@
+---
+# Shared Folder name that should be mounted as /var/www/html for apache server
+shared_folder_name: 
+# Gues OS Apache port - this port will have to be forwarded to the host 
+php_apache_output_port: 8082

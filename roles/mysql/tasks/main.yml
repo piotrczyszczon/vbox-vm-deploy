@@ -1,4 +1,4 @@
-- name: Setup PHPMyAdmin
+- name: Setup MySQL
   block:
     - name: pull a mysql docker image
       docker_image:
@@ -7,14 +7,20 @@
     
     - name: Create mysql container
       docker_container:
-        name: "mysql"
+        name: "{{ mysql.db_container_name }}"
         detach: true
         image: "mysql:latest"
         state: started
         restart: yes
         ports:
-          - "3306:3306"
+          - "{{ mysql.output_port }}:3306"
         env:
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: "{{ mysql.root_password }}"
 
+    - name: Add mysql to start on boot
+      cron:
+        name: "MySql container"
+        special_time: reboot
+        job: "docker start {{ mysql.db_container_name }}"
+        
   become: yes

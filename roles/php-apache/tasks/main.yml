@@ -1,0 +1,27 @@
+- name: "Setup PHP Apache"
+  block:
+    - name: "pull a php:apache docker image"
+      docker_image:
+        name: "php:apache"
+        source: pull
+    
+    - name: "Create php-apache container"
+      docker_container:
+        name: "{{ php_apache.container_name }}"
+        detach: true
+        image: "php:apache"
+        state: started
+        restart: yes
+        recreate: yes
+        ports:
+          - "{{ php_apache.output_port }}:80"
+        volumes:
+          - "{{ php_apache.shared_folder}}:/var/www/html"
+
+    - name: Add php-apache to start on boot
+      cron:
+        name: "PHP Apache container"
+        special_time: reboot
+        job: "docker start {{ php_apache.container_name }}"
+        
+  become: yes

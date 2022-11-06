@@ -1,0 +1,4 @@
+php_apache:
+  container_name: php-apache
+  output_port: "{{ php_apache_output_port | default('8082') }}"
+  shared_folder: "{{ shared_folder_guest_path }}"

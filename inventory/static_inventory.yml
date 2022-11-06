@@ -1,0 +1,10 @@
+virtualmachines:
+  hosts:
+    vm01:
+      # VM IP address - eg: 127.0.0.1
+      ansible_host: 
+  vars:
+    # ssh User
+    ansible_user: 
+    # ssh User Password
+    ansible_password: 

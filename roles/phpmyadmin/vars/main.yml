@@ -1,0 +1,4 @@
+phpmyadmin:
+  name: phpmyadmin
+  db_container_name: "{{ db_container_name }}"
+  output_port: 8081

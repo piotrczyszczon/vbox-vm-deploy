@@ -6,6 +6,10 @@ To create local VM, `vbox-vm-setup` project can be used, see: https://github.com
 
 # Run
 
+## Configuration
+### Static Inventory
+
+Put your VM addresses into `inventory/static_inventory.yml` file
 In current state - initial version - script can be run with following command
 
 ```ansible

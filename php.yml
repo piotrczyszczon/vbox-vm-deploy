@@ -1,7 +1,9 @@
 ---
 - hosts: virtualmachines
   roles:
+    - shared-folder
     - os-packages
     - docker
     - mysql
     - phpmyadmin
+    - php-apache

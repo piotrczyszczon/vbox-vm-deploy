@@ -1,0 +1,4 @@
+mysql:
+  db_container_name: "{{ db_container_name }}"
+  output_port: 3306
+  root_password: root

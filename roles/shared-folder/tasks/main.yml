@@ -1,0 +1,8 @@
+- name: Mount shared folder
+  mount:
+    path: "{{ shared_folder.guest_path }}"
+    src: "{{ shared_folder.src_name }}"
+    fstype: vboxsf
+    opts: defaults
+    state: mounted
+  become: yes
