@@ -14,7 +14,9 @@ Ansible binaries are required to run deployment scripts. To setup Ansible enviro
 
 To install cygwin, see following manual: https://www.cygwin.com/install.html
 
-**Important:** Select ansible binaries during installation
+**Important:** Select ansible binaries during installation, as shown below:
+![image](https://user-images.githubusercontent.com/62462151/200087868-61c9829d-f0ba-4915-9be2-a46b63a14de0.png)
+
 
 ## Configuration
 ### Static Inventory
@@ -51,6 +53,3 @@ Parameters:
   -e <environment> - environment for which scripts is going to be executed - see: environments/ dir, eg: local
   -i <instance> - instance for which scripts is going to be executed - see: environments/<environment>/ dir, eg: php
 ```
-
-Example:
-`php.sh -e local -i php`
